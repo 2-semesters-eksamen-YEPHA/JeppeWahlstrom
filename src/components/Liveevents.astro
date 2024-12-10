@@ -1,4 +1,4 @@
-<h1 class=".h1desktop">LIVE EVENTS</h1>
+<h1 class="h2desktop">LIVE EVENTS</h1>
 
 <div class="liveevents">
   <div class="pdesktop">
@@ -26,5 +26,16 @@
   .liveevents {
     display: flex;
     justify-content: center;
+  }
+  @media (min-width: 1000px) {
+    .liveevents,
+    .pdesktop {
+    }
+    .h2desktop {
+      display: flex;
+      justify-content: center;
+      font-family: "Inter", serif;
+      font-size: 64px;
+    }
   }
 </style>
