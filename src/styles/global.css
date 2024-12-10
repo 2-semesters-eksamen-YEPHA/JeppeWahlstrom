@@ -1,0 +1,57 @@
+.logo,
+button {
+  font-family: "Inter", serif;
+  font-style: normal;
+}
+
+/*DESKTOP FONTS*/
+.h1desktop {
+  font-family: "Inter", serif;
+  font-style: normal;
+  font-size: 210px;
+}
+
+.h2desktop {
+  font-family: "Inter", serif;
+  font-style: normal;
+  font-size: 64px;
+}
+
+.pdesktop {
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-size: 20px;
+}
+
+/*Live events desktop*/
+.billetter {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.liveevents,
+.pdesktop {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/*MOBIL FONTS*/
+
+.h1mobil {
+  font-family: "Inter", serif;
+  font-style: normal;
+  font-size: 90px;
+}
+
+.h2mobil {
+  font-family: "Inter", serif;
+  font-style: normal;
+  font-size: 40px;
+}
+
+.pmobil {
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-size: 17px;
+}
