@@ -3,8 +3,36 @@
 ---
 
 <footer>
+   
 
+<div class="nav_container">
 
+  <nav class="menu">
+    
+    <a href="/nyhedsbrev">NYHEDSBREV</a>
+    <a href="/about">ABOUT</a>
+  
+    
+<div>
+  <a href="https://www.tiktok.com/@_yepha" target="_blank">
+    <img src="/public/billeder/tiktok.svg" alt="TikTok">
+  </a>
+</div>
+<div>
+  <a href="https://www.instagram.com/__yepha/?hl=da" target="_blank">
+    <img src="/public/billeder/instagram.svg" alt="Instagram">
+  </a>
+</div>
+<div>
+  <a href="https://open.spotify.com/album/5fMgcuHMFaoFk0jbhNzXXv?si=NTGPeSkKRb2u7_kITmY-xw&fbclid=PAZXh0bgNhZW0CMTEAAaaZjs8wTIuiXWH60iIgjAdEndlKA3vy93ttMJWuWXWUt_lEfMBFSPcFmZs_aem_CkdrE-5x9C-FDbFgZ6Z2EQ&nd=1&dlsi=7ae159444818450e" target="_blank">
+    <img src="/public/billeder/spotyfi.svg" alt="Spotify">
+  </a>
+</div>
+
+<button>BOOK</button>
+
+  </nav>
+</div>
 
 
 </footer>
@@ -12,7 +40,36 @@
 
 
 <style>
+.nav_container {
+  display: flex;            
+  align-items: center;     
+  justify-content: space-evenly; 
+  gap: 20px;    
+  padding-top: 20px;            
+}
 
+button {
+    padding: 20px 40px;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 35px;
+}
+.menu {
+    display: flex;
+    gap: 100px;
+    padding-right: 35px;
+  }
+
+  .menu a {
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding-top: 20px;
+  }
 
 
 </style>
