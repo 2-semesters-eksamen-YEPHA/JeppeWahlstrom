@@ -4,24 +4,44 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Button from "../components/Button.astro";
+import Spotyfi from "../components/Spotyfi.astro";
 ---
 
 <Layout>
   <body>
     <Header title="ACTING" />
-    <main>
-
-
-<div class="img1"> 
-  <img src="/public/billeder/actingimgvenstre.webp" alt="">
-   <img src="/public/billeder/actingimghøjre.webp" alt="">
-</div>
-
-    </main>
+    <main></main>
 
     <Footer />
   </body>
 </Layout>
+
+<style>
+  .img {
+    width: 100px;
+  }
+
+  .spotify {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 40px;
+  }
+
+  .p {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 40px;
+    font-weight: bolder;
+    font-family: "Inter", serif;
+    line-height: 20px;
+  }
+</style>
 
 <style>
 
