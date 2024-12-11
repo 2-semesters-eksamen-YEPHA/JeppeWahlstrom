@@ -10,7 +10,16 @@ import Spotyfi from "../components/Spotyfi.astro";
 <Layout>
   <body>
     <Header title="ACTING" />
-    <main></main>
+    <main>
+      <div class="container">
+        <Button />
+
+        <div class="spotify">
+          <img class="img" src="/public/billeder/imdb.svg" alt="" />
+          <p class="p"><br />EXPLORE ON <br /><br /> SPOTIFY <br /></p>
+        </div>
+      </div>
+    </main>
 
     <Footer />
   </body>
@@ -44,12 +53,8 @@ import Spotyfi from "../components/Spotyfi.astro";
 </style>
 
 <style>
-
-.img1 {
-display: flex;
-padding-top: -20px;
-}
-
-
-
+  .img1 {
+    display: flex;
+    padding-top: -20px;
+  }
 </style>
