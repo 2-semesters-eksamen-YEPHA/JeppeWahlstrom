@@ -1,10 +1,9 @@
 ---
 ---
-
-  <div class="form-container">
-        <dialog opden ></dialog>
+<div class="form-container">
+        <dialog open >
         <h2>NYHEDSBREV</h2>
-        <form action="" netlify>
+        <form action="netlify">
           <p class="nyhedstekst"> Skriv dig op til nyhedsbrevet og vær den første, der modtager besked om nye koncerter, merchandise og meget mere.</p>
             <label for="email"></label>
             <input type="email" id="email" name="email" required >
@@ -12,7 +11,6 @@
         </form>
         </dialog>
     </div>
-
 <style>
 
 /*-----------NYHEDSBREV---------*/
@@ -64,3 +62,17 @@ button:hover {
   color: #233249;
 }
 </style>
+
+<script>
+// JavaScript til at lukke dialogen
+const dialog = document.getElementById('newsletter-dialog');
+const closeButton = document.querySelector('.close-button');
+
+closeButton.addEventListener('click', () => {
+  dialog.close();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  dialog.showModal(); 
+});
+</script>
