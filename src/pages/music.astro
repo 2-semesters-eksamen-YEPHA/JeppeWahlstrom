@@ -10,16 +10,87 @@ import Button from "../components/Button.astro";
   <body>
     <Header title="MUSIC" />
     <main>
+      <div class="container">
+        <Button />
 
+        <div class="spotify">
+          <img class="img" src="/public/billeder/spotyfi.svg" alt="" />
+          <p class="p"><br />EXPLORE ON <br /><br /> SPOTIFY <br /></p>
+        </div>
+      </div>
+      <div class="videoer">
+        <div>
+          <img src="/public/billeder/pigervideo.webp" alt="piger" />
+          <h1>Piger</h1>
+        </div>
+        <div>
+          <img src="/public/billeder/opmedhåret.webp" alt="piger" />
+          <h1>Op med håret</h1>
+        </div>
+        <div>
+          <img src="/public/billeder/hjerneblødning.webp" alt="piger" />
+          <h1>Hjerneblødning</h1>
+        </div>
+      </div>
 
-
-
-
-
-
-
+      <h1 class="h2desktop">NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART //</h1>
+      <a href="https://www.youtube.com/@YephaDK/videos"><p class="viewall">View all</p> </a>
     </main>
 
     <Footer />
   </body>
+
+  <style>
+    .h2desktop {
+      font-size: 30px;
+      color: #a52913;
+    }
+    .viewall {
+      font-family: "Lato", sans-serif;
+      font-style: black;
+      font-size: 20px;
+      text-align: right;
+      text-decoration: underline;
+    }
+
+    .videoer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .img {
+      width: 100px;
+    }
+
+    img {
+      height: auto;
+      width: 400px;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: "Inter", serif;
+      font-style: normal;
+    }
+
+    .spotify {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 40px;
+    }
+
+    .p {
+      color: rgba(0, 0, 0, 0.3);
+      font-size: 40px;
+      font-weight: bolder;
+      font-family: "Inter", serif;
+      line-height: 20px;
+    }
+  </style>
 </Layout>
