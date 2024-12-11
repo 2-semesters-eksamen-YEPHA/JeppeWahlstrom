@@ -4,37 +4,41 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Button from "../components/Button.astro";
+import Videomusik from "../components/Videomusik.astro";
 ---
 
 <Layout>
   <body>
     <Header title="MUSIC" />
+    <Videomusik />
     <main>
       <div class="container">
         <Button />
 
         <div class="spotify">
-          <img class="img" src="/public/billeder/spotyfi.svg" alt="" />
+          <img class="img" src="public/billeder/spotyfi.svg" alt="" />
           <p class="p"><br />EXPLORE ON <br /><br /> SPOTIFY <br /></p>
         </div>
       </div>
       <div class="videoer">
         <div>
-          <img src="/public/billeder/pigervideo.webp" alt="piger" />
+          <img src="public/billeder/pigervideo.webp" alt="piger" />
           <h1>Piger</h1>
         </div>
         <div>
-          <img src="/public/billeder/opmedhåret.webp" alt="piger" />
+          <img src="public/billeder/opmedhåret.webp" alt="piger" />
           <h1>Op med håret</h1>
         </div>
         <div>
-          <img src="/public/billeder/hjerneblødning.webp" alt="piger" />
+          <img src="public/billeder/hjerneblødning.webp" alt="piger" />
           <h1>Hjerneblødning</h1>
         </div>
       </div>
 
       <h1 class="h2desktop">NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART //</h1>
       <a href="https://www.youtube.com/@YephaDK/videos"><p class="viewall">View all</p> </a>
+
+      <h1 class="h2singler">SINGLER</h1>
     </main>
 
     <Footer />
@@ -91,6 +95,12 @@ import Button from "../components/Button.astro";
       font-weight: bolder;
       font-family: "Inter", serif;
       line-height: 20px;
+    }
+    .h2singler {
+      text-align: center;
+      font-family: "Inter", serif;
+      font-style: normal;
+      font-size: 64px;
     }
   </style>
 </Layout>
