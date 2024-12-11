@@ -18,7 +18,7 @@
   </div>
 </div>
 
-<div class="instarulle">
+<div class="gallery">
   <img class="billede1" src="public/billeder/insta.webp" alt="insta" />
   <img class="billede2" src="public/billeder/instablåtbillede.webp" alt="insta" />
   <div class="tobilleder">
@@ -26,8 +26,8 @@
     <img class="billede4" src="public/billeder/instasorthviderdusød.webp" alt="insta" />
   </div>
 
-  <img src="public/billeder/instarødt.webp" alt="insta" />
-  <img src="public/billeder/instasorthvid.webp" alt="insta" />
+  <img class="billede5" src="public/billeder/instarødt.webp" alt="insta" />
+  <img class="billede6" src="public/billeder/instasorthvid.webp" alt="insta" />
 </div>
 
 <style>
@@ -43,11 +43,17 @@
     justify-content: center;
     font-family: "Inter", serif;
   }
-  .instarulle {
+
+  .gallery {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Tilpasser kolonnerne */
+    gap: 0px; /* Plads mellem billederne */
   }
 
+  .gallery img {
+    width: 100%; /* Billedet fylder hele kolonnen */
+    height: auto; /* Bevarer proportionerne */
+  }
   img {
     width: 80px;
   }
@@ -58,6 +64,13 @@
     width: 180px;
   }
 
+  .billede5 {
+    width: 260px;
+  }
+
+  .billede6 {
+    width: 168px;
+  }
   .tobilleder {
     display: flex;
     flex-direction: column;
