@@ -42,12 +42,12 @@ header {
   display: none; /* Skjul menuen på mobile enheder */
   flex-direction: column;
   position: absolute;
-  top: 60px; /* Juster denne værdi afhængigt af din header's højde */
+  top: 0px; 
   right: 0;
+  bottom: 0px;
   width: 100%;
   background-color: #fff;
   text-align: center;
-
 }
 
 .menu a {
@@ -99,7 +99,13 @@ header {
 }
 /* -------------- DET HER ER DESKTOP ---------------- */
 @media (min-width: 1024px) {
-   header {
+
+.hvidtlogo {
+display: none;
+
+}
+
+  header {
     display: flex;
     justify-content: space-between;
     align-items: center;
