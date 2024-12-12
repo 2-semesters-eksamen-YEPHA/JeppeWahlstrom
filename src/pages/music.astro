@@ -18,6 +18,7 @@ import Videomusik from "../components/Videomusik.astro";
         <div class="spotify">
           <img class="img" src="/billeder/spotyfi.svg" alt="" />
           <p class="p"><br />EXPLORE ON <br /><br /> SPOTIFY <br /></p>
+          <img src="/billeder/Arrow.jpg" alt="pil" />
         </div>
       </div>
       <div class="videoer">
@@ -35,16 +36,27 @@ import Videomusik from "../components/Videomusik.astro";
         </div>
       </div>
 
-      <h1 class="h2desktop">NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART //</h1>
       <a href="https://www.youtube.com/@YephaDK/videos"><p class="viewall">View all</p> </a>
 
       <h1 class="h2singler">SINGLER</h1>
+
+      <h1 class="h2desktop">NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART //</h1>
     </main>
 
     <Footer />
   </body>
 
   <style>
+    .arrow {
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+    }
+    .left {
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+    }
     .h2desktop {
       font-size: 30px;
       color: #a52913;
