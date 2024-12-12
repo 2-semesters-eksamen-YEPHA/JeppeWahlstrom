@@ -4,7 +4,9 @@ const { title } = Astro.props;
 ---
 
 <div class="container">
-  <Button />
+  <div class="button">
+    <Button />
+  </div>
 
   <div class="spotify">
     <img class="img" src="/billeder/spotyfi.svg" alt="" />
@@ -37,5 +39,25 @@ const { title } = Astro.props;
     font-weight: bolder;
     font-family: "Inter", serif;
     line-height: 20px;
+  }
+
+  @media (max-width: 1024px) {
+    .spotify {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .img,
+    img {
+      width: 30px;
+    }
+
+    .p {
+      font-size: 20px;
+    }
+
+    .button {
+      grid: block;
+    }
   }
 </style>
