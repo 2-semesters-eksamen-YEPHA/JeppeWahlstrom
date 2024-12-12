@@ -7,6 +7,7 @@ import Button from "../components/Button.astro";
 import Spotyfi from "../components/Spotyfi.astro";
 ---
 
+
 <Layout>
   <body>
     <Header title="ACTING" />
@@ -138,8 +139,7 @@ import Spotyfi from "../components/Spotyfi.astro";
 <style>
   .overskrift {
     text-align: center;
-    font-family: "Inter", serif;
-    font-style: normal;
+    font-family: font-family: "Inter", serif;
   }
   .part3 {
     display: grid;
@@ -158,8 +158,6 @@ import Spotyfi from "../components/Spotyfi.astro";
     display: inline-block;
     border-bottom: 1px solid black;
     padding-left: 170px;
-    font-family: "Inter", serif;
-    font-style: normal;
   }
 
   .streg-container {
@@ -169,8 +167,6 @@ import Spotyfi from "../components/Spotyfi.astro";
   .streg2 {
     display: inline-block; /* Sørger for, at teksten er som et separat element */
     position: relative;
-    font-family: "Inter", serif;
-    font-style: normal;
   }
   .streg2 {
     display: flex;
@@ -249,47 +245,56 @@ import Spotyfi from "../components/Spotyfi.astro";
     font-family: "Inter", serif;
     line-height: 20px;
   }
+ 
 
-  @media (max-width: 1024px) {
+
+   @media (max-width: 1024px) {
+
     .img {
-      width: 100px;
-    }
-    .part1 {
-      display: flex;
-      text-align: center;
-      line-height: 2em;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
+    width: 100px;
+  }
+  .part1 {
+    display: flex;
+    text-align: center;
+    line-height: 2em;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
 
     .part2 {
-    }
-    .faktabox {
-    }
-
-    .liste {
-      margin: 50px;
-    }
-
-    .mobilimg1 {
-      display: none;
-    }
-
-    .img1 {
-      display: none;
-    }
-
-    .img2 {
-      display: none;
-    }
-    .img3 {
-      display: none;
-    }
-
-    .part3 {
-      display: grid;
-      grid-template-columns: repeat(1, 1fr); /* 3 kolonner */
-      line-height: 1.5;
-    }
+  
   }
+ .faktabox {
+
+  }
+  
+  .liste {
+margin: 50px;  
+}
+
+.mobilimg1 {
+  display: none; 
+}
+
+.img1 {
+  display: none;
+}
+
+  .img2 {
+display: none;
+
+  }
+.img3 {
+
+  display: none;
+}
+
+  .part3 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* 3 kolonner */
+    line-height: 1.5;
+  }
+
+ }
 </style>
