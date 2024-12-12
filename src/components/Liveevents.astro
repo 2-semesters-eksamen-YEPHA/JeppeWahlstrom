@@ -3,35 +3,35 @@
 <div class="liveevents">
   <div class="pdesktop">
     <div>
-      <p>14 nov 2025 YEPHA // Hotel Cecil</p><p class="billetter">BILLETER</p>
-      <p>18 nov 2025 YEPHA // BREMEN</p><p class="billetter">BILLETER</p>
-      <p>2 sep 2025 YEPHA // Royal Arena</p><p class="billetter">BILLETER</p>
-      <p>16 sep 2025 YEPHA // VEGA</p><p class="billetter">BILLETER</p>
-      <p>14 nov 2025 YEPHA // PUMPEHUSET</p><p class="billetter">BILLETER</p>
-      <p>18 nov 2025 YEPHA // Maskinhallen</p><p class="billetter">BILLETER</p>
+      <p class="venstre-tekst">14 nov 2025 YEPHA // Hotel Cecil <a class="billetter">BILLETER</a></p>
+      <p class="venstre-tekst">18 nov 2025 YEPHA // BREMEN<a class="billetter">BILLETER</a></p>
+      <p class="venstre-tekst">2 sep 2025 YEPHA // Royal Arena <a class="billetter">BILLETER</a></p>
+      <p class="venstre-tekst">16 sep 2025 YEPHA // VEGA <a class="billetter">BILLETER</a></p>
+      <p class="venstre-tekst">14 nov 2025 YEPHA // PUMPEHUSET <a class="billetter">BILLETER</a></p>
+      <p class="venstre-tekst">18 nov 2025 YEPHA // Maskinhallen <a class="billetter">BILLETER</a></p>
     </div>
   </div>
 </div>
 
 <style>
-  ul {
-    text-decoration: underline;
-  }
-  .pdesktop,
+
+  .pdesktop, 
   .liveevents {
     display: flex;
     justify-content: center;
-    text-decoration: underline;
   }
 
-  p {
-    display: flex;
-    position: relative;
-    right: 0px;
-    display: inline-block;
+  p { 
     border-bottom: 1px solid black;
-    padding-left: 170px;
+    padding-left: 100px;
   }
+.venstre-tekst {
+text-indent: 180px;
+}
+  .billetter {
+  float: right; 
+}
+
   @media (min-width: 1000px) {
     .liveevents,
     .pdesktop {
