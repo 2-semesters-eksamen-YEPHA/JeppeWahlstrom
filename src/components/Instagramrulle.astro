@@ -18,24 +18,26 @@
   </div>
 </div>
 
+<div id="instarulle">
 <div class="gallery">
   <img class="billede1" src="/billeder/insta.webp" alt="insta" />
   <img class="billede2" src="/billeder/instablåtbillede.webp" alt="insta" />
+  <img class="billede6" src="/billeder/instasorthvid.webp" alt="insta" />
+  <img class="billede5" src="/billeder/instarødt.webp" alt="insta" />
+
+  
   <div class="tobilleder">
     <img class="billede3" src="/billeder/instasortbillede.webp" alt="insta" />
     <img class="billede4" src="/billeder/instasorthviderdusød.webp" alt="insta" />
   </div>
-
-  <img class="billede5" src="/billeder/instarødt.webp" alt="insta" />
-  <img class="billede6" src="/billeder/instasorthvid.webp" alt="insta" />
+</div>
 </div>
 
 <style>
   .someikoner {
     display: flex;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-    justify-content: space-evenly;
+   justify-content: center;
+   gap: 70px;   
   }
 
   .h2desktop {
@@ -46,8 +48,9 @@
 
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Tilpasser kolonnerne */
-    gap: 0px; /* Plads mellem billederne */
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* Tilpasser kolonnerne */
+    gap: 30px; 
+    margin-top: 100px;
   }
 
   .gallery img {
@@ -55,24 +58,59 @@
     height: auto; /* Bevarer proportionerne */
   }
   img {
-    width: 80px;
+    width: 100%;
+    height: 100%;
   }
   .billede1 {
-    width: 230px;
+    width: 100px;
   }
   .billede2 {
     width: 180px;
+    margin-top: 90px;
   }
 
+  .billede4 {
+   margin-bottom: 80px;
+   margin-left: ;
+  }
   .billede5 {
-    width: 260px;
+    width: 20px;
+    margin-top: 80px;
   }
 
   .billede6 {
-    width: 168px;
+    width: 50px;
+    margin-bottom: 100px;
+    
+
   }
   .tobilleder {
-    display: flex;
-    flex-direction: column;
+     width: 180px;
+      margin-top: 100px;
+
   }
+
+
+#instarulle {
+
+  overflow: hidden;
+}
+
+  .gallery {
+animation: scroll-left 35s linear infinite;
+ display: flex;
+   
+  
+  }
+
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0%); /* Starter uden for skærmen til højre */
+  }
+  to {
+    transform: translateX(-50%); /* Flytter hele galleriet ud til venstre */
+  }
+}
 </style>
+
