@@ -2,7 +2,7 @@
 const { id } = Astro.props;
 console.log(id);
 
-return id.map((id) => ({
+return names.map((name) => ({
   params: { id: id.slug }, // [artist]=artist.slug
   props: { id }, // send al data med som props
 }));
