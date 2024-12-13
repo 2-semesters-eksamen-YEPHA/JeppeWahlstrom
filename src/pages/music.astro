@@ -5,11 +5,53 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Button from "../components/Button.astro";
 import Videomusik from "../components/Videomusik.astro";
+
+
+const singler = await fetch("https://gmrqdsphowntllgdewkq.supabase.co/rest/v1/yepha_singles", {
+  method: "GET",
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdtcnFkc3Bob3dudGxsZ2Rld2txIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3Mzc0NTksImV4cCI6MjA0OTMxMzQ1OX0.HHGha3yx6RNf9AkkQsBICs0b4qpwkOQ2cSO0BOAGxQ8"
+    }
+}).then((res)=>res.json())
+
+console.log (singler);
+
+
+
+
+
+
+
+
 ---
 
+<!---
+
+ {singler.map((single) =>{
+  return<name data="{name}" />;
+ })} 
+ -->
+     <!-- singler.filter(single => underoverskrift == "2010").map((single)=>(
+                <singler_card artist={single} />
+    
+            )) -->
+
+<!-- <div class="singler_fetch"></div>
+       {
+        
+        }
+ </div>  -->
+ 
 <Layout>
   <body>
     <Header title="MUSIC" />
+
+       <div class="singler">
+    
+    </div>
+
+
+
     <Videomusik />
     <main>
       <div class="container">
