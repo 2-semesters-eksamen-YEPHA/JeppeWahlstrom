@@ -1,37 +1,51 @@
 ---
 ---
-
-  <div class="form-container">
-        <h2>NYHEDSBREV</h2>
-        <form action="netlify" >
-          
-<p>Skriv dig op til nyhedsbrevet og vær den første, der modtager besked om nye koncerter, merchandise og meget mere.
-</p>
-<div class="skærsilden">
-<input class="input" type="email" id="email" name="email" placeholder="E-MAIL" required>
-<button type="submit">TILMELD</button>
-</div>
-        </form>
-        
-        
+<dialog id="newsletter-dialog">
+ <div class="form-container">
+  <button class="luk" type="reset" onclick="closeNewsletter()"></button>
+  <h2>NYHEDSBREV</h2>
+  <form action="netlify">
+    <p>Skriv dig op til nyhedsbrevet og vær den første, der modtager besked om nye koncerter, merchandise og meget mere.</p>
+    <div class="skærsilden">
+      <input class="input" type="email" id="email" name="email" placeholder="E-MAIL" required>
+      <button type="submit">TILMELD</button>
     </div>
+  </form>
+</div>
+</dialog>
+
+
+
 <style>
+/* ---------------- NYHEDSBREV------------- */
 
+.luk {
 
-/*-----------NYHEDSBREV---------*/
+ color: aqua;
+
+}
 
 .skærsilden {
-display: grid;
-justify-content: center;
-gap: 20px;
+  display: grid;
+  justify-content: center;
+  gap: 20px;
 }
+
 .form-container {
-position: relative;
-align-self: center;
-background-color: rgba(0, 0, 0, 0.84);
-width: 400px;
-height: 400px;
-padding-top: 10px;
+  position: relative;
+  align-self: center;
+  background-color: rgba(0, 0, 0, 0.84);
+  width: 400px;
+  height: 400px;
+  padding-top: 10px;
+  opacity: 0;
+  transform: translateY(-50px); /* Start uden for skærmen */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Glidende effekt */
+}
+
+.form-container.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 h2 {
@@ -39,22 +53,21 @@ h2 {
   font-size: 40px;
   color: #ffffff;
   margin-bottom: 20px;
-   font-family: "Inter", serif;
+  font-family: "Inter", serif;
   font-style: normal;
 }
 
 p {
   text-align: center;
   color: #fff;
-   font-family: "Lato", sans-serif;
+  font-family: "Lato", sans-serif;
   font-style: normal;
-  
 }
 
 .input {
   display: center;
   text-align: center;
-  width: 100%; /* Bedre responsivitet */
+  width: 100%;
   font-size: 16px;
   padding: 10px;
   box-sizing: border-box;
@@ -71,20 +84,45 @@ button {
 
 button:hover {
   background-color: #ffffff;
-  
+}
+
+.luk {
+color: #ffffff;
+
+
 }
 </style>
 
 <script>
-// JavaScript til at lukke dialogen
-const dialog = document.getElementById('newsletter-dialog');
-const closeButton = document.querySelector('.close-button');
-
-closeButton.addEventListener('click', () => {
-  dialog.close();
-});
-
+// JavaScript til at aktivere scroll-effekten
 document.addEventListener('DOMContentLoaded', () => {
-  dialog.showModal(); 
+  const formContainer = document.querySelector('.form-container');
+
+  // Funktion der aktiverer animationen, når elementet kommer i synsfelt
+  function handleScroll() {
+    const rect = formContainer.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+      formContainer.classList.add('visible'); // Tilføj 'visible' for at animere
+    }
+  }
+
+  // Lyt efter scroll events
+  window.addEventListener('scroll', handleScroll);
+
+  // Kør funktionen en gang ved siden af indlæsning
+  handleScroll();
 });
+
+// Funktion til at lukke nyhedsbrevet (dialogen)
+function closeNewsletter() {
+  const dialog = document.getElementById('newsletter-dialog');
+  dialog.close();  // Luk dialogen
+}
+
+// Sørg for at åbne dialogen, når siden er indlæst
+document.addEventListener('DOMContentLoaded', () => {
+  const dialog = document.getElementById('newsletter-dialog');
+  dialog.showModal();  // Vis dialogen
+});
+
 </script>
