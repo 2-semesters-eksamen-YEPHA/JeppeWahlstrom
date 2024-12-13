@@ -24,6 +24,10 @@
   <img class="billede2" src="/billeder/instablåtbillede.webp" alt="insta" />
   <img class="billede6" src="/billeder/instasorthvid.webp" alt="insta" />
   <img class="billede5" src="/billeder/instarødt.webp" alt="insta" />
+  <img class="billede1" src="/billeder/acting6.webp" alt="">
+  <img class="billede1" src="/billeder/storm.webp" alt="">
+  <img class="billede1" src="/billeder/insta.webp" alt="insta" />
+
 
   
   <div class="tobilleder">
@@ -51,56 +55,50 @@
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* Tilpasser kolonnerne */
     gap: 30px; 
     margin-top: 100px;
+    margin-bottom: 100px;
   }
 
   .gallery img {
-    width: 100%; /* Billedet fylder hele kolonnen */
-    height: auto; /* Bevarer proportionerne */
+  flex-shrink: 0; /* Forhindrer billeder i at krympe */
+  width: 20%;
+  height: auto;
   }
-  img {
-    width: 100%;
-    height: 100%;
-  }
+
   .billede1 {
     width: 100px;
+      border-radius: 2%;
+
   }
   .billede2 {
-    width: 180px;
+    width: 100px;
     margin-top: 90px;
   }
 
   .billede4 {
-   margin-bottom: 80px;
+   margin-bottom: 100px;
    margin-left: ;
   }
   .billede5 {
-    width: 20px;
+    width: 1000px;
     margin-top: 80px;
   }
 
   .billede6 {
-    width: 50px;
+    width: 100px;
     margin-bottom: 100px;
-    
-
   }
   .tobilleder {
-     width: 180px;
-      margin-top: 100px;
-
+     width: 500px;
   }
 
-
 #instarulle {
-
   overflow: hidden;
 }
 
   .gallery {
-animation: scroll-left 35s linear infinite;
- display: flex;
-   
-  
+animation: scroll-left 60s linear infinite;
+display: flex;
+flex-wrap: nowrap;
   }
 
 
