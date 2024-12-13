@@ -1,27 +1,33 @@
 ---
 ---
-<div class="form-container">
-        <dialog open >
+
+  <div class="form-container">
         <h2>NYHEDSBREV</h2>
-        <form action="netlify">
-          <p class="nyhedstekst"> Skriv dig op til nyhedsbrevet og vær den første, der modtager besked om nye koncerter, merchandise og meget mere.</p>
-            <label for="email"></label>
-            <input type="email" id="email" name="email" required >
+        <form action="netlify" >
+<p>Skriv dig op til nyhedsbrevet og vær den første, der modtager besked om nye koncerter, merchandise og meget mere.
+</p>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
             <button type="submit">TILMELD</button>
         </form>
-        </dialog>
     </div>
+
+
+
+
+
 <style>
 
 /*-----------NYHEDSBREV---------*/
 /* Formularcontainer */
+
 .form-container {
-  background-color: rgba(0, 0, 0, 0.84);
-  padding: 40px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
+position: relative;
+background-color: black;
+ width: 400px;
+  height: 400px
+  
 }
 
 .nyhedstekst {
@@ -35,19 +41,21 @@ h2 {
   margin-bottom: 20px;
 }
 
-input,
-textarea {
-  width: 90%; /* Bedre responsivitet */
-  padding: 15px; /* Juster padding */
+p {
+  text-align: center;
+  color: #fff;
+}
+input, {
+  width: 100%; /* Bedre responsivitet */
+  padding: 25px; /* Juster padding */
   margin-bottom: 15px;
-  border-radius: 5px;
-  border: 1px solid #ccc; /* Tydeligere kant */
+  border-radius: 25px;
   font-size: 16px;
   box-sizing: border-box;
 }
 
 button {
-  width: 90%; /* Fyld hele bredden */
+  width: 10%; /* Fyld hele bredden */
   padding: 15px; /* Øget padding for bedre klikoplevelse */
   background-color: #ef4d2e;
   color: #fff;
@@ -59,7 +67,7 @@ button {
 
 button:hover {
   background-color: #ffffff;
-  color: #233249;
+  
 }
 </style>
 
