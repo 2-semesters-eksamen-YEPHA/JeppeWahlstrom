@@ -50,8 +50,6 @@ import Button from "../components/Button.astro";
   input[type="text"],
   input[type="email"],
   input[type="tel"],
-  input[type="date"],
-  input[type="time"],
   select {
     width: 100%;
     padding: 10px;
@@ -60,14 +58,34 @@ import Button from "../components/Button.astro";
     outline: none; /* Remove outline */
     text-decoration: none;
   }
-
-  .Button {
+  button {
+    padding: 20px 40px;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: #6c0000;
+    color: white;
+    border: none;
+    border-radius: 35px;
+    text-align: center;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Aligns horizontally */
+    align-items: center; /* Aligns vertically */
+  }
+
+  @media (max-width: 1000px) {
+    .form-group {
+      margin-bottom: 15px;
+      font-family: "Lato", sans-serif;
+      font-style: normal;
+      font-size: 10px;
+      text-decoration: none;
+      border: none; /* Remove border */
+      outline: none; /* Remove outline */
+    }
   }
 </style>
 
-<a href="#special-component">
+<a href="/src/components/FormComponent">
   <div class="special-component">
     <h1>BOOK HER</h1>
     <p>Udfyld formularen nedenfor eller send en mail til mig på kontakt@jeppewahlstrom.dk</p>
@@ -89,12 +107,10 @@ import Button from "../components/Button.astro";
         <label for="email">YOUR MESSAGE:</label>
         <input type="email" id="email" name="email" required />
       </div>
-      <div id="special-component">
-        <Button />
-      </div>
+      <Button />
     </form>
-  </div></a
->
+  </div>
+</a>
 
 <script>
   const toggleFormBtn = document.getElementById("toggleFormBtn");

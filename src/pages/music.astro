@@ -5,24 +5,16 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Button from "../components/Button.astro";
 import Videomusik from "../components/Videomusik.astro";
-
+import Singlercard from "../components/Singlercard.astro";
 
 const singler = await fetch("https://gmrqdsphowntllgdewkq.supabase.co/rest/v1/yepha_singles", {
   method: "GET",
-    headers: {
-        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdtcnFkc3Bob3dudGxsZ2Rld2txIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3Mzc0NTksImV4cCI6MjA0OTMxMzQ1OX0.HHGha3yx6RNf9AkkQsBICs0b4qpwkOQ2cSO0BOAGxQ8"
-    }
-}).then((res)=>res.json())
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdtcnFkc3Bob3dudGxsZ2Rld2txIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3Mzc0NTksImV4cCI6MjA0OTMxMzQ1OX0.HHGha3yx6RNf9AkkQsBICs0b4qpwkOQ2cSO0BOAGxQ8",
+  },
+}).then((res) => res.json());
 
-console.log (singler);
-
-
-
-
-
-
-
-
+console.log(singler);
 ---
 
 <!---
@@ -30,28 +22,23 @@ console.log (singler);
  {singler.map((single) =>{
   return<name data="{name}" />;
  })} 
- -->
-     <!-- singler.filter(single => underoverskrift == "2010").map((single)=>(
+ --><!-- singler.filter(single => underoverskrift == "2010").map((single)=>(
                 <singler_card artist={single} />
     
-            )) -->
-
-<!-- <div class="singler_fetch"></div>
+            )) --><!-- <div class="singler_fetch"></div>
        {
         
         }
  </div>  -->
+
  
+
 
 <Layout>
   <body>
     <Header title="MUSIC" />
 
-       <div class="singler">
-    
-    </div>
-
-
+    <div class="singler"></div>
 
     <Videomusik />
     <main>
@@ -66,15 +53,15 @@ console.log (singler);
       </div>
       <div class="videoer">
         <div>
-          <img src="/billeder/pigervideo.webp" alt="piger" />
+          <a href="https://www.youtube.com/watch?v=cuM3jj36Q_o"><img src="/billeder/pigervideo.webp" alt="piger" /></a>
           <h1>Piger</h1>
         </div>
         <div>
-          <img src="/billeder/opmedhåret.webp" alt="piger" />
+          <a href="https://www.youtube.com/watch?v=k7MA5Rc1cjY"><img src="/billeder/opmedhåret.webp" alt="piger" /></a>
           <h1>Op med håret</h1>
         </div>
         <div>
-          <img src="/billeder/hjerneblødning.webp" alt="piger" />
+          <a href="https://www.youtube.com/watch?v=l5rEs7AzX_w"><img src="/billeder/hjerneblødning.webp" alt="piger" /></a>
           <h1>Hjerneblødning</h1>
         </div>
       </div>
@@ -82,8 +69,8 @@ console.log (singler);
       <a href="https://www.youtube.com/@YephaDK/videos"><p class="viewall">View all</p> </a>
 
       <h1 class="h2singler">SINGLER</h1>
-
-      <h1 class="h2desktop">NY MUSIK UDE SNART  // NY MUSIK UDE SNART // NY MUSIK UDE SNART //</h1>
+      <Singlercard />
+      <h1 class="h2desktop">NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART //</h1>
     </main>
 
     <Footer />
@@ -156,6 +143,13 @@ console.log (singler);
       font-family: "Inter", serif;
       font-style: normal;
       font-size: 64px;
+    }
+
+    @media (max-width: 1000px) {
+      .videoer {
+        display: block;
+        padding: 30px;
+      }
     }
   </style>
 </Layout>
