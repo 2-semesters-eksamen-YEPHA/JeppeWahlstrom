@@ -12,9 +12,9 @@ import FormComponent from "../components/FormComponent.astro";
   <body>
     <Header title="ACTING" />
     <main>
-      <div class="img1">
-        <img src="/billeder/actingimgvenstre.webp" alt="" />
-        <img src="/billeder/actingimghøjre.webp" alt="" />
+      <div class="actorhero1">
+        <img src="/billeder/actingimgvenstre.webp" alt="billede1" />
+        <img src="/billeder/actingimghøjre.webp" alt="billede2" />
       </div>
 
       <div class="container">
@@ -27,8 +27,8 @@ import FormComponent from "../components/FormComponent.astro";
       </div>
 
       <div class="img2">
-        <img src="/billeder/acting1.webp" alt="" />
-        <img src="/billeder/acting2.webp" alt="" />
+        <img src="/billeder/acting1.webp" alt="billede3" />
+        <img src="/billeder/acting2.webp" alt="billede4" />
       </div>
 
       <h1 class="streg1">PROFIL INFO</h1>
@@ -120,9 +120,9 @@ import FormComponent from "../components/FormComponent.astro";
       </div>
 
       <div class="img3">
-        <img src="/billeder/acting4.webp" alt="" />
-        <img src="/billeder/acting5.webp" alt="" />
-        <img src="/billeder/acting6.webp" alt="" />
+        <img src="/billeder/acting4.webp" alt="img1" />
+        <img src="/billeder/acting5.webp" alt="img2" />
+        <img src="/billeder/acting6.webp" alt="img3" />
       </div>
     </main>
 
@@ -214,14 +214,17 @@ import FormComponent from "../components/FormComponent.astro";
     margin: 50px;
   }
 
-  .img1 {
-    display: flex;
-    padding-top: -20px;
+  .actorhero1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+       
+
   }
   /*------------------------------*/
 
   .img {
-    width: 100px;
+   max-width: 100%; 
+  height: auto; 
   }
 
   .spotify {
@@ -245,10 +248,14 @@ import FormComponent from "../components/FormComponent.astro";
     line-height: 20px;
   }
 
+ /* MOBILE */
   @media (max-width: 1024px) {
+
     .img {
-      width: 100px;
+  max-width: 100%; 
+  height: auto; 
     }
+
     .part1 {
       display: flex;
       text-align: center;
@@ -270,10 +277,14 @@ import FormComponent from "../components/FormComponent.astro";
       display: none;
     }
 
-    .img1 {
-      display: grid;
+  
+    .iactorhero1 {
+       display: grid;
       grid-template-columns: 1fr 1fr;
-    }
+  max-width: 100%; 
+  height: auto; 
+  padding-top: -20px;
+  }
 
     .img2 {
       display: flex;
@@ -282,7 +293,10 @@ import FormComponent from "../components/FormComponent.astro";
       flex-wrap: wrap;
     }
     .img3 {
-      display: grid;
+       display: flex; /* Beholder fleksibiliteten */
+  max-width: 100%; /* Gør billedet responsivt */
+  height: auto; /* Bevarer proportionerne */
+  padding-top: 0;
     }
 
     .part3 {
