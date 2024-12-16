@@ -11,7 +11,7 @@ const { title } = Astro.props;
   <div class="spotify">
     <img class="img" src="/billeder/spotyfi.svg" alt="" />
     <p class="p"><br />EXPLORE ON <br /><br />SPOTIFY<br /></p>
-    <img src="/billeder/Arrow.jpg" alt="pil" />
+    <img class="arrow" src="/billeder/Arrow.jpg" alt="pil" />
   </div>
 </div>
 
@@ -42,22 +42,20 @@ const { title } = Astro.props;
   }
 
   @media (max-width: 1024px) {
-    .spotify {
-      width: 100%;
-      object-fit: cover;
-    }
-
     .img,
     img {
-      width: 30px;
+      width: 10px;
     }
 
     .p {
-      font-size: 20px;
+      font-size: 10px;
     }
 
     .button {
       grid: block;
+    }
+    .arrow {
+      display: block;
     }
   }
 </style>

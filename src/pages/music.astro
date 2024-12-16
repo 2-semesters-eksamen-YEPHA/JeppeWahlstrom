@@ -6,6 +6,7 @@ import Footer from "../components/Footer.astro";
 import Button from "../components/Button.astro";
 import Videomusik from "../components/Videomusik.astro";
 import Singlercard from "../components/Singlercard.astro";
+import Spotyfi from "../components/Spotyfi.astro";
 
 const singler = await fetch("https://gmrqdsphowntllgdewkq.supabase.co/rest/v1/yepha_singles", {
   method: "GET",
@@ -39,13 +40,7 @@ console.log(singler);
     <Videomusik />
     <main>
       <div class="container">
-        <Button />
-
-        <div class="spotify">
-          <img class="img" src="/billeder/spotyfi.svg" alt="" />
-          <p class="p"><br />EXPLORE ON <br /><br /> SPOTIFY <br /></p>
-          <img src="/billeder/Arrow.jpg" alt="pil" />
-        </div>
+        <Spotyfi />
       </div>
       <div class="videoer">
         <div>
