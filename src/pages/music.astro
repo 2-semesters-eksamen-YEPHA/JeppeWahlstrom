@@ -22,7 +22,7 @@ import Spotyfi from "../components/Spotyfi.astro";
       </div>
       <div class="videoer">
         <div>
-          <a href="https://www.youtube.com/watch?v=cuM3jj36Q_o"><img src="/billeder/pigervideo.webp" alt="piger" /></a>
+          <a href="https://www.youtube.com/watch?v=cuM3jj36Q_o"><img class="videomusik1" src="/billeder/pigervideo.webp" alt="piger" /></a>
           <h1>Piger</h1>
         </div>
         <div>
@@ -30,7 +30,7 @@ import Spotyfi from "../components/Spotyfi.astro";
           <h1>Op med håret</h1>
         </div>
         <div>
-          <a href="https://www.youtube.com/watch?v=l5rEs7AzX_w"><img src="/billeder/hjerneblødning.webp" alt="piger" /></a>
+          <a href="https://www.youtube.com/watch?v=l5rEs7AzX_w"><img class="videomusik1" src="/billeder/hjerneblødning.webp" alt="piger" /></a>
           <h1>Hjerneblødning</h1>
         </div>
         <div>
@@ -38,7 +38,7 @@ import Spotyfi from "../components/Spotyfi.astro";
           <h1>Piger</h1>
         </div>
         <div>
-          <a href="https://www.youtube.com/watch?v=k7MA5Rc1cjY"><img src="/billeder/opmedhåret.webp" alt="piger" /></a>
+          <a href="https://www.youtube.com/watch?v=k7MA5Rc1cjY"><img class="videomusik1" src="/billeder/opmedhåret.webp" alt="piger" /></a>
           <h1>Op med håret</h1>
         </div>
         <div>
@@ -90,11 +90,15 @@ import Spotyfi from "../components/Spotyfi.astro";
     }
 
     .videoer {
-      animation: scroll-left 60s linear infinite;
+      animation: scroll-left 80s linear infinite;
       display: flex;
       flex-wrap: nowrap;
       gap: 20px;
       align-content: baseline;
+    }
+
+    .videomusik1 {
+      margin-top: 90px;
     }
 
     @keyframes scroll-left {
