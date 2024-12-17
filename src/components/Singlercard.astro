@@ -1,82 +1,50 @@
 ---
-const { id } = Astro.props;
-console.log(id);
+import type { any } from "astro:schema";
 
 // En funktion der henter og viser data
-async function fetchAndDisplaySingles() {
-  try {
-    // Hent data fra API'et
-    const response = await fetch("https://gmrqdsphowntllgdewkq.supabase.co/rest/v1/yepha_singles", {
-      method: "GET",
-      headers: {
-        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdtcnFkc3Bob3dudGxsZ2Rld2txIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3Mzc0NTksImV4cCI6MjA0OTMxMzQ1OX0.HHGha3yx6RNf9AkkQsBICs0b4qpwkOQ2cSO0BOAGxQ8",
-      },
-    });
 
-    // Konverter responsen til JSON
-    const singler = await response.json();
-    console.log(singler);
+export async function getStaticPaths() {
+  const singler = await fetch("https://gmrqdsphowntllgdewkq.supabase.co/rest/v1/yepha_singles", {
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdtcnFkc3Bob3dudGxsZ2Rld2txIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3Mzc0NTksImV4cCI6MjA0OTMxMzQ1OX0.HHGha3yx6RNf9AkkQsBICs0b4qpwkOQ2cSO0BOAGxQ8",
+    },
+  }).then((res) => res.json());
 
-    // Find containeren, hvor album covers skal vises
-    const productContainer = document.querySelector(".albumcovers");
-
-    // Byg HTML dynamisk for hver single
-    singler.forEach((single) => {
-      const singleimage_url = `billeder/${single.image_url}`;
-
-      // HTML skabelon for et single album
-
-      // Tilføj den genererede HTML til containeren
-      productContainer.insertAdjacentHTML("beforeend", productHTML);
-    });
-  } catch (error) {
-    console.error("Fejl ved hentning af data:", error);
-  }
+  return singler.map((single) => ({
+    props: { single }, // send al data med som props
+  }));
 }
 
-// Kald funktionen
-fetchAndDisplaySingles();
+const { single } = Astro.props;
+console.log(single); // artist.name, artist.image osv.
 ---
 
 <body>
-  <div class="albumcovers">
-    <div class="felx-col">
-      <a href="link_url" class="single-link">
-        <div class="img">
-          <img src="/image_url.webp" alt="" />
-          <h2 class="h2"></h2>
-          <p class="aarstal"></p>
-        </div>
-      </a>
-    </div>
-  </div>
-
   <div class="felx-col">
     <a href="${single.link_url}">
       <div class="img">
         <img src="${singleimage_url}" alt="albumcover" />
-        <h2 class="h2">{single.overskrift}</h2>
+        <h2>{single.overskrift}</h2>
         <p class="aarstal">{single.underoverskrift}</p>
       </div>
     </a>
   </div>
-  `;
-
-  <style>
-    img {
-      max-width: 250px;
-    }
-    .albumcovers {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 20px;
-      padding: 30px;
-      color: black;
-      text-decoration: none;
-      font-size: 10px;
-      font-family: "Inter", serif;
-      font-style: normal;
-      text-align: center;
-    }
-  </style>
 </body>
+
+<style>
+  img {
+    max-width: 250px;
+  }
+  .albumcovers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 30px;
+    color: black;
+    text-decoration: none;
+    font-size: 10px;
+    font-family: "Inter", serif;
+    font-style: normal;
+    text-align: center;
+  }
+</style>
