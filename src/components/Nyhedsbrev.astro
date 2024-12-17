@@ -1,17 +1,20 @@
 ---
 ---
 <dialog id="newsletter-dialog">
- <div class="form-container">
-  <button class="luk" type="reset" onclick="closeNewsletter()"></button>
-  <h2>NYHEDSBREV</h2>
-  <form action="netlify">
-    <p>Skriv dig op til nyhedsbrevet og vær den første, der modtager besked om nye koncerter, merchandise og meget mere.</p>
-    <div class="skærsilden">
-      <input class="input" type="email" id="email" name="email" placeholder="E-MAIL" required>
-      <button type="submit">TILMELD</button>
-    </div>
-  </form>
-</div>
+  <div class="form-container">
+    <button class="luk" type="button" onclick="closeNewsletter()">✖</button>
+    <h2>NYHEDSBREV</h2>
+    <form>
+      <p>
+        Skriv dig op til nyhedsbrevet og vær den første, der modtager besked om nye koncerter,
+        merchandise og meget mere.
+      </p>
+      <div class="skærsilden">
+        <input class="input" type="email" id="email" name="email" placeholder="E-MAIL" required />
+        <button type="submit">TILMELD</button>
+      </div>
+    </form>
+  </div>
 </dialog>
 
 
@@ -19,11 +22,6 @@
 <style>
 /* ---------------- NYHEDSBREV------------- */
 
-.luk {
-
- color: aqua;
-
-}
 
 .skærsilden {
   display: grid;
@@ -86,14 +84,35 @@ button:hover {
   background-color: #ffffff;
 }
 
-.luk {
-color: #ffffff;
-
-
+dialog[open] {
+  display: block;
 }
+
+.luk {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ef4d2e;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.luk:hover {
+  background-color: #d43f25;
+}
+
 </style>
 
 <script>
+
+
+
 // JavaScript til at aktivere scroll-effekten
 document.addEventListener('DOMContentLoaded', () => {
   const formContainer = document.querySelector('.form-container');
@@ -113,16 +132,28 @@ document.addEventListener('DOMContentLoaded', () => {
   handleScroll();
 });
 
-// Funktion til at lukke nyhedsbrevet (dialogen)
-function closeNewsletter() {
-  const dialog = document.getElementById('newsletter-dialog');
-  dialog.close();  // Luk dialogen
-}
 
-// Sørg for at åbne dialogen, når siden er indlæst
+
 document.addEventListener('DOMContentLoaded', () => {
   const dialog = document.getElementById('newsletter-dialog');
-  dialog.showModal();  // Vis dialogen
+  
+  // Åbn dialogen, hvis understøttet
+  if (dialog && typeof dialog.showModal === 'function') {
+    dialog.showModal();
+  } else {
+    dialog.style.display = 'block';
+  }
 });
+
+// Luk dialogen med knappen
+function closeNewsletter() {
+  const dialog = document.getElementById('newsletter-dialog');
+  console.log("Luk-knap trykket"); // Fejlfinding
+  if (dialog && typeof dialog.close === 'function') {
+    dialog.close();
+  } else {
+    dialog.style.display = 'none';
+  }
+}
 
 </script>
