@@ -54,3 +54,7 @@ button {
   font-style: normal;
   font-size: 17px;
 }
+
+.albumcover {
+  max-width: 60%;
+}

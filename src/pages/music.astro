@@ -22,11 +22,23 @@ import Spotyfi from "../components/Spotyfi.astro";
       </div>
       <div class="videoer">
         <div>
-          <a href="https://www.youtube.com/watch?v=cuM3jj36Q_o"><img src="/billeder/pigervideo.webp" alt="piger" /></a>
+          <a href="https://www.youtube.com/watch?v=cuM3jj36Q_o"><img class="videomusik1" src="/billeder/pigervideo.webp" alt="piger" /></a>
           <h1>Piger</h1>
         </div>
         <div>
           <a href="https://www.youtube.com/watch?v=k7MA5Rc1cjY"><img src="/billeder/opmedhåret.webp" alt="piger" /></a>
+          <h1>Op med håret</h1>
+        </div>
+        <div>
+          <a href="https://www.youtube.com/watch?v=l5rEs7AzX_w"><img class="videomusik1" src="/billeder/hjerneblødning.webp" alt="piger" /></a>
+          <h1>Hjerneblødning</h1>
+        </div>
+        <div>
+          <a href="https://www.youtube.com/watch?v=cuM3jj36Q_o"><img src="/billeder/pigervideo.webp" alt="piger" /></a>
+          <h1>Piger</h1>
+        </div>
+        <div>
+          <a href="https://www.youtube.com/watch?v=k7MA5Rc1cjY"><img class="videomusik1" src="/billeder/opmedhåret.webp" alt="piger" /></a>
           <h1>Op med håret</h1>
         </div>
         <div>
@@ -40,7 +52,7 @@ import Spotyfi from "../components/Spotyfi.astro";
       <h1 class="h2singler">SINGLER</h1>
       <Singlercard />
 
-      <h1 class="h2desktop">NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART //</h1>
+      <h1 class="h2desktop">NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART</h1>
     </main>
 
     <Footer />
@@ -58,8 +70,12 @@ import Spotyfi from "../components/Spotyfi.astro";
       -webkit-transform: rotate(135deg);
     }
     .h2desktop {
-      font-size: 30px;
+      font-size: 50px;
       color: #a52913;
+      animation: scroll-left 60s linear infinite;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+      display: inline-block;
     }
     .viewall {
       font-family: "Lato", sans-serif;
@@ -73,8 +89,26 @@ import Spotyfi from "../components/Spotyfi.astro";
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
     }
-    .img {
-      width: 100px;
+
+    .videoer {
+      animation: scroll-left 80s linear infinite;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 20px;
+      align-content: baseline;
+    }
+
+    .videomusik1 {
+      margin-top: 90px;
+    }
+
+    @keyframes scroll-left {
+      from {
+        transform: translateX(0%); /* Starter uden for skærmen til højre */
+      }
+      to {
+        transform: translateX(-50%); /* Flytter hele galleriet ud til venstre */
+      }
     }
 
     img {
@@ -113,6 +147,20 @@ import Spotyfi from "../components/Spotyfi.astro";
       .videoer {
         display: block;
         padding: 30px;
+        width:;
+      }
+
+      .videoer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .videoer {
+        animation: scroll-left 80s linear infinite;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 20px;
+        align-content: baseline;
       }
     }
   </style>
