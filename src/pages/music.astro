@@ -33,6 +33,18 @@ import Spotyfi from "../components/Spotyfi.astro";
           <a href="https://www.youtube.com/watch?v=l5rEs7AzX_w"><img src="/billeder/hjerneblødning.webp" alt="piger" /></a>
           <h1>Hjerneblødning</h1>
         </div>
+        <div>
+          <a href="https://www.youtube.com/watch?v=cuM3jj36Q_o"><img src="/billeder/pigervideo.webp" alt="piger" /></a>
+          <h1>Piger</h1>
+        </div>
+        <div>
+          <a href="https://www.youtube.com/watch?v=k7MA5Rc1cjY"><img src="/billeder/opmedhåret.webp" alt="piger" /></a>
+          <h1>Op med håret</h1>
+        </div>
+        <div>
+          <a href="https://www.youtube.com/watch?v=l5rEs7AzX_w"><img src="/billeder/hjerneblødning.webp" alt="piger" /></a>
+          <h1>Hjerneblødning</h1>
+        </div>
       </div>
 
       <a href="https://www.youtube.com/@YephaDK/videos"><p class="viewall">View all</p> </a>
@@ -40,7 +52,7 @@ import Spotyfi from "../components/Spotyfi.astro";
       <h1 class="h2singler">SINGLER</h1>
       <Singlercard />
 
-      <h1 class="h2desktop">NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART //</h1>
+      <h1 class="h2desktop">NY MUSIK UDE SNART // NY MUSIK UDE SNART</h1>
     </main>
 
     <Footer />
@@ -58,8 +70,11 @@ import Spotyfi from "../components/Spotyfi.astro";
       -webkit-transform: rotate(135deg);
     }
     .h2desktop {
-      font-size: 30px;
+      font-size: 50px;
       color: #a52913;
+      animation: scroll-left 60s linear infinite;
+      display: flex;
+      flex-wrap: nowrap;
     }
     .viewall {
       font-family: "Lato", sans-serif;
@@ -73,6 +88,24 @@ import Spotyfi from "../components/Spotyfi.astro";
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
     }
+
+    .videoer {
+      animation: scroll-left 60s linear infinite;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 20px;
+      align-content: baseline;
+    }
+
+    @keyframes scroll-left {
+      from {
+        transform: translateX(0%); /* Starter uden for skærmen til højre */
+      }
+      to {
+        transform: translateX(-50%); /* Flytter hele galleriet ud til venstre */
+      }
+    }
+
     .img {
       width: 100px;
     }
