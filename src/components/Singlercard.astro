@@ -6,9 +6,9 @@ console.log(id);
 <body>
   <div class="albumcovers">
     <div class="felx-col">
-      <a href="" class="single-link">
+      <a href="link_url" class="single-link">
         <div class="img">
-          <img src="" alt="" />
+          <img src="image_url" alt="" />
           <h2 class="h2"></h2>
           <p class="aarstal"></p>
         </div>
@@ -57,9 +57,9 @@ console.log(id);
           // HTML skabelon for et single album
           const productHTML = `
             <div class="felx-col">
-              <a href="${single.link || "#"}">
+              <a href="${single.link_url || "link_url"}">
                 <div class="img">
-                  <img src="${image_url}" alt="${single.image_url || "Album cover"}" />
+                  <img src="${single.image_url}" alt="${single.image_url || "Album cover"}" />
                   <h2 class="h2">${single.overskrift || "Titel mangler"}</h2>
                   <p class="aarstal">${single.underoverskrift || "År ukendt"}</p>
                 </div>
