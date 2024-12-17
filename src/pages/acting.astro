@@ -203,9 +203,12 @@ import FormComponent from "../components/FormComponent.astro";
 
   /*------- ALLE IMGER ------------*/
   .img3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding-left: 100px;
+        display: flex; /* Bruger flexbox */
+  flex-wrap: wrap; /* Tillader billederne at flytte sig til en ny linje */
+  justify-content: center;
+  flex-direction: row;
+    gap: 20px;
+    
   }
   .img2 {
     display: grid;
@@ -215,8 +218,14 @@ import FormComponent from "../components/FormComponent.astro";
   }
 
   .actorhero1 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+  display: flex; /* Gør containeren til en flexbox */
+  justify-content: center; /* Centrerer billederne horisontalt */
+ flex-direction: row; /* Sørger for, at billederne hopper ned på en ny linje, hvis der ikke er plads */
+}
+.actorhero1 img {
+  width: 100%; /* Gør billederne mindre (ca. halvdelen af containerens bredde) */
+  max-width: 100%; /* Sørger for, at billederne ikke overstiger deres naturlige størrelse */
+  height: auto; 
        
 
   }
@@ -278,12 +287,9 @@ import FormComponent from "../components/FormComponent.astro";
     }
 
   
-    .iactorhero1 {
-       display: grid;
-      grid-template-columns: 1fr 1fr;
-  max-width: 100%; 
-  height: auto; 
-  padding-top: -20px;
+    .iactorhero1 img{
+  
+    width: 100%; /* Gør billederne fulde bredde af containeren */
   }
 
     .img2 {
@@ -293,10 +299,12 @@ import FormComponent from "../components/FormComponent.astro";
       flex-wrap: wrap;
     }
     .img3 {
-       display: flex; /* Beholder fleksibiliteten */
-  max-width: 100%; /* Gør billedet responsivt */
-  height: auto; /* Bevarer proportionerne */
-  padding-top: 0;
+        display: flex; /* Bruger flexbox */
+  flex-wrap: wrap; /* Tillader billederne at flytte sig til en ny linje */
+  justify-content: center;
+  flex-direction: row;
+  gap: 20px;
+  
     }
 
     .part3 {
