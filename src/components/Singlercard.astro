@@ -1,27 +1,31 @@
 ---
 const { id } = Astro.props;
 console.log(id);
-
-// return names.map((name) => ({
-//   params: { id: id.slug }, // [artist]=artist.slug
-//   props: { id }, // send al data med som props
-// }));
-// ---
-
-// <div class="tidogscene">
-//   <h2>{id.name}</h2>
-//   <h2>{id.underoverskrift}</h2>
-//   <h1></h1>
-// </div>
-
-// <!-- <a href={"/name/" + id.slug}>
-//   <div class="flexbox_lineup">
-//     <div class="data_singler">
-//       <article>
-//         <h3>{id.name}</h3>
-//         <img src={`/image_url/${id.img}`} alt={id.name} />
-//       </article>
-//     </div>
-//   </div>
-// </a> -->
 ---
+
+<body>
+  <div class="albumcovers">
+    <div class="felx-col">
+      <a href="">
+        <div class="img">
+          <img src="" alt="" />
+          <h2 class="h2"></h2>
+          <p class="aarstal"></p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const singler = await fetch("https://gmrqdsphowntllgdewkq.supabase.co/rest/v1/yepha_singles", {
+      method: "GET",
+      headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdtcnFkc3Bob3dudGxsZ2Rld2txIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3Mzc0NTksImV4cCI6MjA0OTMxMzQ1OX0.HHGha3yx6RNf9AkkQsBICs0b4qpwkOQ2cSO0BOAGxQ8",
+      },
+    }).then((res) => res.json());
+
+    console.log(singler);
+
+    const productContainer = document.querySelector(".albumcovers");
+  </script>
+</body>
