@@ -8,7 +8,7 @@ console.log(id);
     <div class="felx-col">
       <a href="link_url" class="single-link">
         <div class="img">
-          <img src="image_url" alt="" />
+          <img src="/image_url.webp" alt="" />
           <h2 class="h2"></h2>
           <p class="aarstal"></p>
         </div>
@@ -52,14 +52,14 @@ console.log(id);
 
         // Byg HTML dynamisk for hver single
         singler.forEach((single) => {
-          const image_url = `/billeder/${single.image_url}.webp`;
+          const singleimage_url = `billeder/${single.image_url}.webp`;
 
           // HTML skabelon for et single album
           const productHTML = `
             <div class="felx-col">
               <a href="${single.link_url || "link_url"}">
                 <div class="img">
-                  <img src="${single.image_url}" alt="${single.image_url || "Album cover"}" />
+                  <img src="${single.image_url}.webp" alt="${single.image_url || "Album cover"}" />
                   <h2 class="h2">${single.overskrift || "Titel mangler"}</h2>
                   <p class="aarstal">${single.underoverskrift || "År ukendt"}</p>
                 </div>
