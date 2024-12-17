@@ -17,34 +17,27 @@ console.log(id);
   </div>
 
   <style>
-
-.albumcovers {
-display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-    padding: 30px;
-}
-
-
+    .albumcovers {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      padding: 30px;
+      color: black;
+      text-decoration: none;
+    }
   </style>
-
-  
 
   <script>
     // En funktion der henter og viser data
     async function fetchAndDisplaySingles() {
       try {
         // Hent data fra API'et
-        const response = await fetch(
-          "https://gmrqdsphowntllgdewkq.supabase.co/rest/v1/yepha_singles",
-          {
-            method: "GET",
-            headers: {
-              apikey:
-                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdtcnFkc3Bob3dudGxsZ2Rld2txIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3Mzc0NTksImV4cCI6MjA0OTMxMzQ1OX0.HHGha3yx6RNf9AkkQsBICs0b4qpwkOQ2cSO0BOAGxQ8",
-            },
-          }
-        );
+        const response = await fetch("https://gmrqdsphowntllgdewkq.supabase.co/rest/v1/yepha_singles", {
+          method: "GET",
+          headers: {
+            apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdtcnFkc3Bob3dudGxsZ2Rld2txIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3Mzc0NTksImV4cCI6MjA0OTMxMzQ1OX0.HHGha3yx6RNf9AkkQsBICs0b4qpwkOQ2cSO0BOAGxQ8",
+          },
+        });
 
         // Konverter responsen til JSON
         const singler = await response.json();
@@ -60,11 +53,11 @@ display: grid;
           // HTML skabelon for et single album
           const productHTML = `
             <div class="felx-col">
-              <a href="${single.link || '#'}">
+              <a href="${single.link || "#"}">
                 <div class="img">
-                  <img src="${image_url}" alt="${single.image_url || 'Album cover'}" />
-                  <h2 class="h2">${single.overskrift || 'Titel mangler'}</h2>
-                  <p class="aarstal">${single.underoverskrift || 'År ukendt'}</p>
+                  <img src="${image_url}" alt="${single.image_url || "Album cover"}" />
+                  <h2 class="h2">${single.overskrift || "Titel mangler"}</h2>
+                  <p class="aarstal">${single.underoverskrift || "År ukendt"}</p>
                 </div>
               </a>
             </div>
@@ -82,5 +75,3 @@ display: grid;
     fetchAndDisplaySingles();
   </script>
 </body>
-
-
