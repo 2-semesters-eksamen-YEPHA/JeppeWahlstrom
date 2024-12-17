@@ -203,12 +203,11 @@ import FormComponent from "../components/FormComponent.astro";
 
   /*------- ALLE IMGER ------------*/
   .img3 {
-        display: flex; /* Bruger flexbox */
-  flex-wrap: wrap; /* Tillader billederne at flytte sig til en ny linje */
-  justify-content: center;
-  flex-direction: row;
+    display: flex; /* Bruger flexbox */
+    flex-wrap: wrap; /* Tillader billederne at flytte sig til en ny linje */
+    justify-content: center;
+    flex-direction: row;
     gap: 20px;
-    
   }
   .img2 {
     display: grid;
@@ -218,22 +217,20 @@ import FormComponent from "../components/FormComponent.astro";
   }
 
   .actorhero1 {
-  display: flex; /* Gør containeren til en flexbox */
-  justify-content: center; /* Centrerer billederne horisontalt */
- flex-direction: row; /* Sørger for, at billederne hopper ned på en ny linje, hvis der ikke er plads */
-}
-.actorhero1 img {
-  width: 100%; /* Gør billederne mindre (ca. halvdelen af containerens bredde) */
-  max-width: 100%; /* Sørger for, at billederne ikke overstiger deres naturlige størrelse */
-  height: auto; 
-       
-
+    display: flex; /* Gør containeren til en flexbox */
+    justify-content: center; /* Centrerer billederne horisontalt */
+    flex-direction: row; /* Sørger for, at billederne hopper ned på en ny linje, hvis der ikke er plads */
+  }
+  .actorhero1 img {
+    width: 100%; /* Gør billederne mindre (ca. halvdelen af containerens bredde) */
+    max-width: 100%; /* Sørger for, at billederne ikke overstiger deres naturlige størrelse */
+    height: auto;
   }
   /*------------------------------*/
 
   .img {
-   max-width: 100%; 
-  height: auto; 
+    max-width: 100%;
+    height: auto;
   }
 
   .spotify {
@@ -257,12 +254,11 @@ import FormComponent from "../components/FormComponent.astro";
     line-height: 20px;
   }
 
- /* MOBILE */
+  /* MOBILE */
   @media (max-width: 1024px) {
-
     .img {
-  max-width: 100%; 
-  height: auto; 
+      max-width: 100%;
+      height: auto;
     }
 
     .part1 {
@@ -274,23 +270,19 @@ import FormComponent from "../components/FormComponent.astro";
     }
 
     .part2 {
+      display: flex; /* Bruger flexbox */
+      flex-wrap: wrap; /* Tillader billederne at flytte sig til en ny linje */
+      justify-content: center;
+      flex-direction: row;
+      gap: 20px;
     }
-    .faktabox {
-    }
-
     .liste {
       margin: 50px;
     }
 
-    .mobilimg1 {
-      display: none;
+    .iactorhero1 img {
+      width: 100%; /* Gør billederne fulde bredde af containeren */
     }
-
-  
-    .iactorhero1 img{
-  
-    width: 100%; /* Gør billederne fulde bredde af containeren */
-  }
 
     .img2 {
       display: flex;
@@ -299,12 +291,11 @@ import FormComponent from "../components/FormComponent.astro";
       flex-wrap: wrap;
     }
     .img3 {
-        display: flex; /* Bruger flexbox */
-  flex-wrap: wrap; /* Tillader billederne at flytte sig til en ny linje */
-  justify-content: center;
-  flex-direction: row;
-  gap: 20px;
-  
+      display: flex; /* Bruger flexbox */
+      flex-wrap: wrap; /* Tillader billederne at flytte sig til en ny linje */
+      justify-content: center;
+      flex-direction: row;
+      gap: 20px;
     }
 
     .part3 {

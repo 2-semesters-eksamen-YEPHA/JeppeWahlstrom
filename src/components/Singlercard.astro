@@ -32,12 +32,6 @@ console.log(id);
       font-style: normal;
       text-align: center;
     }
-
-    .albumcovers img {
-      width: 20px;
-      border: border-box;
-      border-bottom: 80px;
-    }
   </style>
 
   <script>
@@ -66,7 +60,7 @@ console.log(id);
           // HTML skabelon for et single album
           const productHTML = `
             <div class="felx-col">
-              <a href="${single.link_url || "link_url"}">
+              <a href ="${single.link_url || "link_url"}" style="text-decoration: none;">
                 <div class="img">
                 <img class="albumcover" src="${singleimage_url}" alt="Album cover"}" />
                   <h2 class="h2">${single.overskrift || "Titel mangler"}</h2>
