@@ -1,32 +1,33 @@
 ---
-import type { any } from "astro:schema";
-
 // Function to fetch data and create static paths
 export async function getStaticPaths() {
   const response = await fetch("https://gmrqdsphowntllgdewkq.supabase.co/rest/v1/yepha_singles", {
     headers: {
       apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdtcnFkc3Bob3dudGxsZ2Rld2txIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3Mzc0NTksImV4cCI6MjA0OTMxMzQ1OX0.HHGha3yx6RNf9AkkQsBICs0b4qpwkOQ2cSO0BOAGxQ8",
     },
-  });
-
-  const singles = await response.json();
+  }).then((res) => res.json());
 
   return singles.map((single) => ({
-    params: { id: single.id }, // Assuming each single has a unique 'id'
     props: { single }, // Pass the single data as props
   }));
 }
 
 const { single } = Astro.props;
 console.log(single); // Log the single data for debugging
+
+const productContainer = document.querySelector(".albumcovers");
+
+singler.forEach ((single)) => {
+  const singleimage_url = `billeder/${single.image_url}`;
+}
 ---
 
 <body>
   <div class="flex-col">
     <a href={single.link_url}>
       <div class="img">
-        <img src={single.image_url} alt="album cover" />
-        <h2>{single.overskrift}</h2>
+        <img class="albumcover" src={single.image_url} " alt="Album cover" " />
+        <h2 class="h2">{single.overskrift}</h2>
         <p class="aarstal">{single.underoverskrift}</p>
       </div>
     </a>
@@ -35,7 +36,7 @@ console.log(single); // Log the single data for debugging
 
 <style>
   img {
-    max-width: 250px;
+    width: 20px;
   }
   .albumcovers {
     display: grid;
