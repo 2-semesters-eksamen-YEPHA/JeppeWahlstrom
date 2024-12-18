@@ -52,8 +52,9 @@ import Spotyfi from "../components/Spotyfi.astro";
 
       <h1 class="h2singler">SINGLER</h1>
       <Singlercard />
-      <div class="container"></div>
-      <h1 class="h2desktop">NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART</h1>
+      <div class="h2desktop">
+        <h1 class="h2desktop">NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART</h1>
+      </div>
     </main>
 
     <Footer />
@@ -75,7 +76,7 @@ import Spotyfi from "../components/Spotyfi.astro";
       color: #a52913;
       animation: scroll-left 60s linear infinite;
       white-space: nowrap;
-      flex-wrap: nowrap;
+      overflow: hidden;
       display: inline-block;
     }
     .viewall {
@@ -97,6 +98,13 @@ import Spotyfi from "../components/Spotyfi.astro";
       flex-wrap: nowrap;
       gap: 20px;
       align-content: baseline;
+    }
+
+    .videoer {
+      overflow: hidden;
+    }
+    .h2desktop {
+      overflow: hidden;
     }
 
     .videomusik1 {
