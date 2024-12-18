@@ -1,37 +1,22 @@
 ---
-const singler = fetch("https://gmrqdsphowntllgdewkq.supabase.co/rest/v1/yepha_singles", {
+const singler = await fetch("https://gmrqdsphowntllgdewkq.supabase.co/rest/v1/yepha_singles", {
   method: "GET",
   headers: {
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdtcnFkc3Bob3dudGxsZ2Rld2txIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3Mzc0NTksImV4cCI6MjA0OTMxMzQ1OX0.HHGha3yx6RNf9AkkQsBICs0b4qpwkOQ2cSO0BOAGxQ8",
   },
-})).then((res) => res.json());
-
-
-return singler.map((single) => ({
-  params: { single: single.slug }, // [artist]=artist.slug
-  props: { single }, // send al data med som props
-}));
-
-const { artist } = Astro.props;
-console.log(artist); // artist.name, artist.image osv.
+}).then((res) => res.json());
 ---
 
-<div>
-  <h2>{single.id}</h2>
-  <h2>{single.name}</h2>
-  <h2>{single.overskrift}</h2>
-</div>
-
-<!-- <div>
 {
-  return singler.map(single) => ({
- <h1>{single.id}</h1>
-<h2>{single.name}</h2>
-<h2>{single.overskrift}</h2>
-  }
-  ) 
+  singler.map((single) => {
+    return (
+      <div>
+        {single.name} {single.overskrift}
+        {single.image_url}
+      </div>
+    );
+  })
 }
-</div> -->
 
 <style>
   img {
