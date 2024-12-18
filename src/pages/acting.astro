@@ -63,7 +63,6 @@ import FormComponent from "../components/FormComponent.astro";
             Personbil, Motorcykel <br />
           </p>
         </div>
-
         <img class="mobilimg1" src="/billeder/acting3.webp" alt="" />
       </div>
 
@@ -209,13 +208,25 @@ import FormComponent from "../components/FormComponent.astro";
     flex-direction: row;
     gap: 20px;
   }
-  .img2 {
+  /* .img2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding-left: 120px;
     margin: 50px;
-  }
+  } */
 
+  .img2 {
+    display: flex; /* Gør containeren til en flexbox */
+    justify-content: center; /* Centrerer billederne horisontalt */
+    flex-direction: row; /* Sørger for, at billederne hopper ned på en ny linje, hvis der ikke er plads */
+    gap: 10px;
+    padding: 50px;
+  }
+  .img2 img {
+    width: 80%; /* Gør billederne mindre (ca. halvdelen af containerens bredde) */
+    max-width: 100%; /* Sørger for, at billederne ikke overstiger deres naturlige størrelse */
+    height: auto;
+  }
   .actorhero1 {
     display: flex; /* Gør containeren til en flexbox */
     justify-content: center; /* Centrerer billederne horisontalt */
@@ -276,6 +287,10 @@ import FormComponent from "../components/FormComponent.astro";
       flex-direction: row;
       gap: 20px;
     }
+
+    .part2 img {
+      width: 340px;
+    }
     .liste {
       margin: 50px;
     }
@@ -289,6 +304,15 @@ import FormComponent from "../components/FormComponent.astro";
       flex-direction: row; /* Align items in a row */
       justify-content: center; /* Center items horizontally */
       flex-wrap: wrap;
+      gap: 20px;
+      padding: 40px;
+    }
+    .img1 {
+      display: flex; /* Bruger flexbox */
+      flex-wrap: wrap; /* Tillader billederne at flytte sig til en ny linje */
+      justify-content: center;
+      flex-direction: row;
+      gap: 20px;
     }
     .img3 {
       display: flex; /* Bruger flexbox */
