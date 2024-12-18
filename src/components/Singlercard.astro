@@ -1,84 +1,50 @@
 ---
-const { id } = Astro.props;
-console.log(id);
+//@ts-nocheck
+import Layout from "../layouts/Layout.astro";
+
+const singler = await fetch("https://gmrqdsphowntllgdewkq.supabase.co/rest/v1/yepha_singles", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdtcnFkc3Bob3dudGxsZ2Rld2txIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3Mzc0NTksImV4cCI6MjA0OTMxMzQ1OX0.HHGha3yx6RNf9AkkQsBICs0b4qpwkOQ2cSO0BOAGxQ8",
+  },
+}).then((res) => res.json());
+console.log(singler);
 ---
 
-<body>
-  <div class="albumcovers">
-    <div class="felx-col">
-      <a href="link_url" class="single-link">
-        <div class="img">
-          <img src="/image_url.webp" alt="" />
-          <h2 class="h2"></h2>
-          <p class="aarstal"></p>
+<Layout>
+  {
+    singler.map((single) => {
+      return (
+        <div class="albumcovers">
+          <div class="flex-col">
+            <a href="{single.link_url}">
+              <div class="img">
+                <img src={`/billeder/${single.image_url}`} alt="billede" />
+                <h2>{single.overskrift}</h2>
+                <p>{single.underoverskrift}</p>
+              </div>
+            </a>
+          </div>
         </div>
-      </a>
-    </div>
-  </div>
+      );
+    })
+  }
+</Layout>
 
-  <style>
-    img {
-      width: 20px;
-    }
-    .albumcovers {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 20px;
-      padding: 30px;
-      color: black;
-      text-decoration: none;
-      font-size: 10px;
-      font-family: "Inter", serif;
-      font-style: normal;
-      text-align: center;
-    }
-  </style>
-
-  <script>
-    // En funktion der henter og viser data
-    async function fetchAndDisplaySingles() {
-      try {
-        // Hent data fra API'et
-        const response = await fetch("https://gmrqdsphowntllgdewkq.supabase.co/rest/v1/yepha_singles", {
-          method: "GET",
-          headers: {
-            apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdtcnFkc3Bob3dudGxsZ2Rld2txIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM3Mzc0NTksImV4cCI6MjA0OTMxMzQ1OX0.HHGha3yx6RNf9AkkQsBICs0b4qpwkOQ2cSO0BOAGxQ8",
-          },
-        });
-
-        // Konverter responsen til JSON
-        const singler = await response.json();
-        console.log(singler);
-
-        // Find containeren, hvor album covers skal vises
-        const productContainer = document.querySelector(".albumcovers");
-
-        // Byg HTML dynamisk for hver single
-        singler.forEach((single) => {
-          const singleimage_url = `billeder/${single.image_url}`;
-
-          // HTML skabelon for et single album
-          const productHTML = `
-            <div class="felx-col">
-              <a href ="${single.link_url || "link_url"}" style="text-decoration: none;">
-                <div class="img">
-                <img class="albumcover" src="${singleimage_url}" alt="Album cover"}" />
-                  <h2 class="h2">${single.overskrift || "Titel mangler"}</h2>
-                  <p class="aarstal">${single.underoverskrift || "År ukendt"}</p>
-                </div>
-              </a>
-            </div>
-          `;
-
-          // Tilføj den genererede HTML til containeren
-          productContainer.insertAdjacentHTML("beforeend", productHTML);
-        });
-      } catch (error) {
-        console.error("Fejl ved hentning af data:", error);
-      }
-    }
-
-    // Kald funktionen
-    fetchAndDisplaySingles();
-  </script>
-</body>
+<style>
+  img {
+    width: 200px;
+  }
+  .albumcovers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 30px;
+    color: black;
+    text-decoration: none;
+    font-size: 10px;
+    font-family: "Inter", serif;
+    font-style: normal;
+    text-align: center;
+  }
+</style>
