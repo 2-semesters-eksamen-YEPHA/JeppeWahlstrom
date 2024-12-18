@@ -10,15 +10,16 @@ const singler = await fetch("https://gmrqdsphowntllgdewkq.supabase.co/rest/v1/ye
 {
   singler.map((single) => {
     return (
-      <div class="flex-col">
-        <a href="{single.link_url}">
-          <div class="img">
-            <img src="{billeder/single.image_url.webp}" alt="" />
-            <h1>{single.name} </h1>
-            <h2>{single.overskrift}</h2>
-            <p>{single.underoverskrift}</p>
-          </div>
-        </a>
+      <div class="albumcovers">
+        <div class="flex-col">
+          <a href="{single.link_url}">
+            <div class="img">
+              {/* <img src="{billeder/single.image_url.webp}" alt="billede" /> */}
+              <h2>{single.overskrift}</h2>
+              <p>{single.underoverskrift}</p>
+            </div>
+          </a>
+        </div>
       </div>
     );
   })
