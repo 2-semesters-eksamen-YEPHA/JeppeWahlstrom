@@ -21,6 +21,7 @@ import Spotyfi from "../components/Spotyfi.astro";
       <div class="container">
         <Spotyfi />
       </div>
+      
       <div class="videoer">
         <div>
           <a href="https://www.youtube.com/watch?v=cuM3jj36Q_o"><img class="videomusik1" src="/billeder/pigervideo.webp" alt="piger" /></a>
@@ -87,31 +88,25 @@ import Spotyfi from "../components/Spotyfi.astro";
       text-decoration: underline;
       padding:20px;
     }
+      .videomusik1 {
+      margin-top: 90px;
+    }
+
 
     .videoer {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
+      
     }
 
     .videoer {
       animation: scroll-left 80s linear infinite;
       display: flex;
-      flex-wrap: nowrap;
       gap: 20px;
       align-content: baseline;
     }
 
-    .videoer {
-      overflow: hidden;
-    }
-    .h2desktop {
-      overflow: hidden;
-    }
-
-    .videomusik1 {
-      margin-top: 90px;
-    }
-
+  
     @keyframes scroll-left {
       from {
         transform: translateX(0%); /* Starter uden for skærmen til højre */
