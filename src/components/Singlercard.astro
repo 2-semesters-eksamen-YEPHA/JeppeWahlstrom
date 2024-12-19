@@ -12,10 +12,11 @@ console.log(singler);
 ---
 
 <Layout>
+
+        <div class="albumcovers">
   {
     singler.map((single) => {
       return (
-        <div class="albumcovers">
           <div class="flex-col">
             <a href={single.link_url}>
               <div class="img">
@@ -25,10 +26,11 @@ console.log(singler);
               </div>
             </a>
           </div>
-        </div>
       );
     })
   }
+        </div>
+
 </Layout>
 
 <style>
@@ -36,15 +38,17 @@ console.log(singler);
     width: 200px;
   }
 
-
+a {
+text-decoration: none;
+color: black;
+font-size: 15px;
+}
 
   .albumcovers {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
     padding: 30px;
-    color: black;
-    text-decoration: none;
     font-size: 10px;
     font-family: "Inter", serif;
     font-style: normal;

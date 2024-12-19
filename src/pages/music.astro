@@ -22,6 +22,7 @@ import Spotyfi from "../components/Spotyfi.astro";
         <Spotyfi />
       </div>
       
+      <div class="scroll">
       <div class="videoer">
         <div>
           <a href="https://www.youtube.com/watch?v=cuM3jj36Q_o"><img class="videomusik1" src="/billeder/pigervideo.webp" alt="piger" /></a>
@@ -48,13 +49,13 @@ import Spotyfi from "../components/Spotyfi.astro";
           <h1>Hjerneblødning</h1>
         </div>
       </div>
-
+   </div>
       <a href="https://www.youtube.com/@YephaDK/videos"><p class="viewall">View all</p> </a>
 
       <h1 class="h2singler">SINGLER</h1>
       <Singlercard />
-      <div class="h2desktop">
-        <h1 class="h2desktop">NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART</h1>
+      <div class="scroll">
+        <h1 class="h2desktop_text">NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART // NY MUSIK UDE SNART</h1>
       </div>
     </main>
 
@@ -72,21 +73,26 @@ import Spotyfi from "../components/Spotyfi.astro";
       transform: rotate(135deg);
       -webkit-transform: rotate(135deg);
     }
-    .h2desktop {
+    .scroll {
+      width: 100%;
+      overflow: hidden;
+    }
+    .h2desktop_text{
       font-size: 50px;
       color: #a52913;
       animation: scroll-left 60s linear infinite;
-      white-space: nowrap;
-      overflow: hidden;
       display: inline-block;
+      white-space: nowrap;
+
     }
+
     .viewall {
       font-family: "Lato", sans-serif;
-      font-style: black;
-      font-size: 20px;
+      color: black;
+      font-size: 30px;
       text-align: right;
-      text-decoration: underline;
-      padding:20px;
+      text-decoration: none;
+      padding: 50px;
     }
       .videomusik1 {
       margin-top: 90px;
@@ -96,7 +102,7 @@ import Spotyfi from "../components/Spotyfi.astro";
     .videoer {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      
+     
     }
 
     .videoer {
@@ -104,6 +110,7 @@ import Spotyfi from "../components/Spotyfi.astro";
       display: flex;
       gap: 20px;
       align-content: baseline;
+    
     }
 
   
